@@ -178,7 +178,18 @@ def model1():
     return model
 ```
 
-2. Dodajemy skrypt uruchamiający uczenie się:
+2. Dodajemy nowe zależności do `setup.py`
+```
+requirements = """
+tensorflow
+imageio
+pyyaml  # new (for model.save)
+h5py    # new (for model.save)
+click   # new (for cli)
+"""
+```
+
+3. Dodajemy skrypt uruchamiający uczenie się:
 
 ```python
 #!/usr/bin/env python
@@ -211,11 +222,11 @@ if __name__ == '__main__':
     train()
 ```
 
-3. Skrypt liczący dokładność na zbiorze testowym:
+4. Skrypt liczący dokładność na zbiorze testowym:
 
-4. Uruchomienie `train.py` i `test.py`
+5. Uruchomienie `train.py` i `test.py`
 
-5. Git add & commit
+6. Git add & commit
 
 ## Usprawnianie
 
